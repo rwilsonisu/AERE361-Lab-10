@@ -1,0 +1,50 @@
+\documentclass{article}
+
+% Adds the url command
+\usepackage{hyperref}
+% To remove paragraph indentation
+\usepackage{parskip}
+% Adds line cut to urls
+\usepackage{xurl}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Update these:
+\title{Lab 10 Report}
+\date{Due: 04/21/2026 @ 11:00 AM}
+\author{Ryan Wilson}
+\begin{document}
+\maketitle
+\newpage
+
+\section{Complexity}
+
+The time complexity for the Naive-Gauss elimination in terms of the number of equations (\texttt{n}) is $\mathcal{O}(n^3)$. This is because there are three nested loops, meaning there are three operations successively using \texttt{n}, resulting in the complexity being $\mathcal{O}(n^3)$.
+
+\section{Pseudo-code}
+
+\begin{algorithm}
+\caption{Naive Gaussian Elimination}
+\begin{algorithmic}[1]
+\For{$j= 0$ to $n$}
+    \For{$i = 0$ to $n$}
+        \If{i != j}
+            \State $factor = \frac{A_{ij}}{A_{jj}}$
+            \For{$k = 0$ to $n+1$}
+                \State $A_{ik} = A_{ik} - factor \cdot A_{jk}$
+            \EndFor
+        \EndIf
+    \EndFor
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\section{Sources}
+\url{https://www.geeksforgeeks.org/computer-science-fundamentals/finding-inverse-of-a-matrix-using-gauss-jordan-method/}\\
+\url{https://www.geeksforgeeks.org/c/how-to-use-make-utility-to-build-c-projects/}\\
+\url{https://www.geeksforgeeks.org/python/gauss-seidel-method/}\\
+\url{https://www.geeksforgeeks.org/c/c-program-print-contents-file/}\\
+
+
+\end{document}
